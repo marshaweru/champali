@@ -1,1 +1,1 @@
-import { view, Text } from 'react-native'
+import { view, Text } from 'react-native'; //view as a div text as a p tag
