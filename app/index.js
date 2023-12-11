@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, ScrollView, SafeAreaView } from 'react-native'; //view as a div text as a p tag
+import { View, ScrollView, SafeAreaView } from 'react-native'; //view as a div 
 import { Stack, useRouter } from 'expo router';
 
 import { COLORS, icons, images, SIZES } from '../constants';
@@ -12,8 +12,12 @@ const Home = () => {
     const router = useRouter();
 
     return (
-        <SafeAreaView>
-            <Text>Home</Text>
+        <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
+            <Stack.Screen
+            options={{
+                headersStyle: { backgroundColor: COLORS.lightWhite },
+            }} 
+            />
         </SafeAreaView>
     )
 }
