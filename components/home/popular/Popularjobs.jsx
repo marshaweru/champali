@@ -7,10 +7,13 @@ import { useRouter } from 'expo-router'
 import styles from './popularjobs.style'
 import { COLORS, SIZES } from '../../../constants'
 import  PopularJobsCard from '../../common/cards/popular/PopularJobCard';
+import { colors } from '@material-ui/core'
 
 
 const Popularjobs = () => {
   const router = useRouter();
+  const isLoading = false;
+  const error = false;
 
   return (
     <View style={styles.container}>
@@ -20,6 +23,26 @@ const Popularjobs = () => {
           <Text styles={styles.headerBtn}>Show all</Text>
         </TouchableOpacity>
       </View>
+
+      <view style={styles.cardsContainer}>
+        {isLoading ? (
+          <ActivityIndicator size="large" colors={COLORS.primary} />
+        ) :error ? (
+          <Text>Something went wrong</Text>
+        ) : (
+          <FlatList
+            data={[1, 2, 3, 4]}
+            renderItem={({ item }) => {
+              <PopularJobsCard 
+                item={item}
+              />
+            }}
+            keyExtractor={item => item?.job_id}
+            contentContainerStyle = {{ columnGap: SIZES.medium }}
+            horizontal
+          />
+        )}
+      </view>
     </View>
   )
 }
