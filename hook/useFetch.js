@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from 'axios';
 import { RAPID_API_KEY } from '@env';
 
+const rapidApiKey = RAPID_API_KEY;
+
 const useFetch = (endpoint) => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
