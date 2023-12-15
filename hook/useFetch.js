@@ -8,7 +8,7 @@ const useFetch = () => {
 
     const options = {
         method: 'GET',
-        url: 'https://jsearch.p.rapidapi.com/search',
+        url: 'https://jsearch.p.rapidapi.com/${endpoint}',
         params: {
           query: 'Python developer in Texas, USA',
           page: '1',
